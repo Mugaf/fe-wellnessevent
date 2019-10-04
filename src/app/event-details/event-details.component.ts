@@ -39,5 +39,4 @@ export class EventDetailsComponent implements OnInit {
     if(this.dataUser.data.roleid == 3) return true;
     else return false;
   }
-
 }

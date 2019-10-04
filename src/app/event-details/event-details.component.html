@@ -20,8 +20,11 @@
             <td>{{event.name}}</td>
             <td>{{event.vendorname}}</td>
             <td>
-                <div>
+                <div *ngIf="!event.confirmeddate">
                         {{event.proposeddate1 | date}}<br>{{event.proposeddate3 | date}}<br>{{event.proposeddate3 | date}}
+                </div>
+                <div  *ngIf="event.confirmeddate">
+                    {{event.confirmeddate}}
                 </div>
             </td>
             <td>{{event.status}}</td>

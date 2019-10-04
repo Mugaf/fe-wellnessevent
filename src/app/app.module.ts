@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopBarComponent, NgbdModalConfirmAutofocus } from './top-bar/top-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { ModalAddComponent } from './modal-add/modal-add.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     DashboardComponent,
     TopBarComponent,
     NgbdModalConfirmAutofocus,
-    EventDetailsComponent
+    EventDetailsComponent,
+    ModalAddComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,6 @@ import { EventDetailsComponent } from './event-details/event-details.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ NgbdModalConfirmAutofocus]
+  entryComponents: [ NgbdModalConfirmAutofocus, ModalAddComponent]
 })
 export class AppModule { }
