@@ -10,7 +10,7 @@
             <th scope="col">Date Created</th> 
             <th scope="col"> </th>
             <th scope="col"><div class="addBtn" *ngIf="checkifHR()">
-                    <a  class="button fancy-button"><i class="material-icons">note_add</i></a> 
+                    <a (click)="callAddModal()"  class="button fancy-button"><i class="material-icons">note_add</i></a> 
             </div></th>
           </tr>
         </thead>

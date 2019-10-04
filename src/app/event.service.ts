@@ -27,4 +27,31 @@ export class EventService {
          )
     })
   }
+
+  addEvent(eventName, eventDetail, vendorId, proposedDate1, proposedDate2, proposedDate3, token){
+    let headers = new HttpHeaders({
+      'x-access-token': token
+    })
+    let options = { 
+      headers: headers
+    };
+    return new Promise((resolve, reject) => {
+      this.http.post('http://localhost:3030/api/v1/event', {
+        eventName: eventName,
+        eventDetail: eventDetail,
+        vendorId: vendorId,
+        proposedDate1: proposedDate1,
+        proposedDate2: proposedDate2,
+        proposedDate3: proposedDate3
+      },
+         options).subscribe(
+           res => {
+            resolve(res);
+           },
+           err => {
+            reject(err);
+           }
+         )
+    })
+  }
 }

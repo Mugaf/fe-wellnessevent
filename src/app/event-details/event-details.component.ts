@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { EventService } from '../event.service'; 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAddComponent } from '../modal-add/modal-add.component';
 
 @Component({
   selector: 'app-event-details',
@@ -12,7 +14,8 @@ export class EventDetailsComponent implements OnInit {
   dataUser;
   constructor(
     private loginService: LoginService,
-    private eventService: EventService
+    private eventService: EventService,
+    private modal : NgbModal
   ) { 
     this.loginService.getLoginData()
       .then(result => {
@@ -38,5 +41,9 @@ export class EventDetailsComponent implements OnInit {
   checkifHR(){
     if(this.dataUser.data.roleid == 3) return true;
     else return false;
+  }
+
+  callAddModal(){
+    this.modal.open(ModalAddComponent);
   }
 }
