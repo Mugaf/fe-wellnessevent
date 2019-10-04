@@ -1,0 +1,22 @@
+.Title{
+    float: left;
+    color: white;
+}
+
+.Logout{
+    float: right;
+}
+
+a.button.fancy-button {
+    cursor: pointer;
+    color: white;
+    padding-right: 4px;
+}
+
+i {
+    color: white;
+}
+
+#Logout{
+    margin-bottom: 5px;
+}
