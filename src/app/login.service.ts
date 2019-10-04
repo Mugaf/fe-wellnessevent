@@ -28,4 +28,10 @@ export class LoginService {
   saveLoginData(data){
     this.loginData = data;
   }
+  
+  getLoginData(){
+    return new Promise((resolve, reject) => {
+      resolve (this.loginData);
+    })
+  }
 }

@@ -8,30 +8,26 @@
             <th scope="col">Date</th>
             <th scope="col">Status</th>
             <th scope="col">Date Created</th> 
-            <th scope="col">Action </th>
-            <th scope="col"><div class="addBtn">
+            <th scope="col"> </th>
+            <th scope="col"><div class="addBtn" *ngIf="checkifHR()">
                     <a  class="button fancy-button"><i class="material-icons">note_add</i></a> 
             </div></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let event of events.data; index as i">
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row">{{i + 1}}</th>
+            <td>{{event.name}}</td>
+            <td>{{event.vendorname}}</td>
+            <td>
+                <div>
+                        {{event.proposeddate1 | date}}<br>{{event.proposeddate3 | date}}<br>{{event.proposeddate3 | date}}
+                </div>
+            </td>
+            <td>{{event.status}}</td>
+            <td>{{event.createdDate | date}}</td>
+            <td><button type="button" class="btn btn-primary">View</button></td>
+            <td></td>
           </tr>
         </tbody>
       </table>

@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
     private loginService: LoginService,
     private router: Router
   ) { 
-    //if(!this.loginService.loginData) this.router.navigate(['']);
+    if(!this.loginService.loginData) this.router.navigate(['']);
   }
 
   ngOnInit() {
