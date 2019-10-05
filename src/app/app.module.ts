@@ -11,6 +11,8 @@ import { TopBarComponent, NgbdModalConfirmAutofocus } from './top-bar/top-bar.co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { ModalAddComponent } from './modal-add/modal-add.component';
+import { ModalApprovalComponent } from './modal-approval/modal-approval.component';
+import { ModalRejectComponent } from './modal-reject/modal-reject.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ModalAddComponent } from './modal-add/modal-add.component';
     TopBarComponent,
     NgbdModalConfirmAutofocus,
     EventDetailsComponent,
-    ModalAddComponent
+    ModalAddComponent,
+    ModalApprovalComponent,
+    ModalRejectComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,11 @@ import { ModalAddComponent } from './modal-add/modal-add.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ NgbdModalConfirmAutofocus, ModalAddComponent]
+  entryComponents: [ 
+    NgbdModalConfirmAutofocus, 
+    ModalAddComponent, 
+    ModalApprovalComponent,
+    ModalRejectComponent
+  ]
 })
 export class AppModule { }

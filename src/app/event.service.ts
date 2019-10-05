@@ -10,29 +10,29 @@ export class EventService {
     private http: HttpClient
   ) { }
 
-  getEvents(token){
+  getEvents(token) {
     let headers = new HttpHeaders({
       'x-access-token': token
     })
-    let options = { headers: headers};
+    let options = { headers: headers };
     return new Promise((resolve, reject) => {
       this.http.get('http://localhost:3030/api/v1/event',
-         options).subscribe(
-           res => {
+        options).subscribe(
+          res => {
             resolve(res);
-           },
-           err => {
+          },
+          err => {
             reject(err);
-           }
-         )
+          }
+        )
     })
   }
 
-  addEvent(eventName, eventDetail, vendorId, proposedDate1, proposedDate2, proposedDate3, token){
+  addEvent(eventName, eventDetail, vendorId, proposedDate1, proposedDate2, proposedDate3, token) {
     let headers = new HttpHeaders({
       'x-access-token': token
     })
-    let options = { 
+    let options = {
       headers: headers
     };
     return new Promise((resolve, reject) => {
@@ -44,14 +44,37 @@ export class EventService {
         proposedDate2: proposedDate2,
         proposedDate3: proposedDate3
       },
-         options).subscribe(
-           res => {
+        options).subscribe(
+          res => {
             resolve(res);
-           },
-           err => {
+          },
+          err => {
             reject(err);
-           }
-         )
+          }
+        )
+    })
+  }
+
+  rejectEvent(eventId, rejectReason, token){
+    let headers = new HttpHeaders({
+      'x-access-token': token
+    })
+    let options = {
+      headers: headers
+    };
+    return new Promise((resolve, reject) => {
+      this.http.put('http://localhost:3030/api/v1/event/reject', {
+        eventId: eventId,
+        rejectReason: rejectReason
+      },
+        options).subscribe(
+          res => {
+            resolve(res);
+          },
+          err => {
+            reject(err);
+          }
+        )
     })
   }
 }

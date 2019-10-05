@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h4 class="modal-title">Approval Event</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="container">
+        <div class="row">
+            <div class=".col-sm-3">
+                Vendor Name
+            </div>
+            <div class=".col-sm-9">
+                :{{eventData[0].vendorname}}
+            </div>
+        </div>
+        <div class="row">
+            <div class=".col-sm-3">
+                Date
+            </div>
+            <div *ngIf="eventData[0].confirmeddate" class=".col-sm-9">
+                : {{eventData[0].confirmeddate}}
+            </div>
+            <div *ngIf="!eventData[0].confirmeddate" class=".col-sm-9">
+                : {{eventData[0].proposeddate1 | date}}, {{eventData[0].proposeddate2 | date}},
+                {{eventData[0].proposeddate3 | date}}
+            </div>
+        </div>
+        <div class="row">
+            <div class=".col-sm-3">
+                Status
+            </div>
+            <div class=".col-sm-9">
+                :{{eventData[0].status}}
+            </div>
+        </div>
+        <div class="row">
+                <div class=".col-sm-3">
+                    Created Date
+                </div>
+                <div class=".col-sm-9">
+                    :{{eventData[0].createdDate | date}}
+                </div>
+            </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Cancel click')">Cancel</button>
+    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid)"
+        (click)="rejectModal(eventData[0].eventid)">Reject</button>
+    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid)"
+        (click)="onSubmit(addForm.value)">Approve</button>
+</div>

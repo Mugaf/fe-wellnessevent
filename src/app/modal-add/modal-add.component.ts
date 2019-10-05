@@ -55,7 +55,6 @@ export class ModalAddComponent implements OnInit {
     else return false;
   }
   onSubmit(data) {
-    console.warn(data);
     new Promise((resolve, reject) => {
       resolve(true);
     })
