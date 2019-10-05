@@ -77,4 +77,26 @@ export class EventService {
         )
     })
   }
+  approveEvent(eventId, confirmedDate, token){
+    let headers = new HttpHeaders({
+      'x-access-token': token
+    })
+    let options = {
+      headers: headers
+    };
+    return new Promise((resolve, reject) => {
+      this.http.put('http://localhost:3030/api/v1/event/approve', {
+        eventId: eventId,
+        confirmedDate: confirmedDate
+      },
+        options).subscribe(
+          res => {
+            resolve(res);
+          },
+          err => {
+            reject(err);
+          }
+        )
+    })
+  }
 }

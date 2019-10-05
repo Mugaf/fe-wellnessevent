@@ -46,8 +46,8 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Cancel click')">Cancel</button>
-    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid)"
+    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid, eventData[0].status)"
         (click)="rejectModal(eventData[0].eventid)">Reject</button>
-    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid)"
-        (click)="onSubmit(addForm.value)">Approve</button>
+    <button type="button" class="btn btn-outline-secondary" *ngIf="ifNotVendor(loginData.data.roleid, eventData[0].status)"
+        (click)="approveModal(eventData[0].eventid)">Approve</button>
 </div>

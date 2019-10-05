@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title">Confirm Date</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="approveForm">
+        <div class="form-group">
+            <label for="confirmedDate">Confirmed Date:</label>
+            <select class="form-control" id="confirmedDate" formControlName="confirmedDate">
+                <option [attr.selected]="true" value="{{eventData[0].proposeddate1 | date: 'yyyy-MM-dd'}}">{{eventData[0].proposeddate1 | date}}</option>
+                <option value="{{eventData[0].proposeddate2 | date: 'yyyy-MM-dd'}}">{{eventData[0].proposeddate2 | date}}</option>
+                <option value="{{eventData[0].proposeddate3 | date: 'yyyy-MM-dd'}}">{{eventData[0].proposeddate3 | date}}</option>
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Cancel click')">Cancel</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="onSubmit(approveForm.value)">Submit</button>
+</div>

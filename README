@@ -1,0 +1,11 @@
+this is front end booking wellness event application. it's using REST API by httpClient module.
+it is not using redux. this is my first time create application in angular.
+how to deploy:
+1.install npm first(it is required) 
+2.run npm install -g @angular/cli if you are not installed yet
+3.clone this git repository into your pc 
+4.go to inside project directory and run "npm install"
+5.copy .env file by application creator.
+6.dont forget to connect to the internet because we are using remote database
+7.start the api server with "ng serve -o" or "ng serve --open" 
+8.the application will be running on your browser on http://localhost:4200/.

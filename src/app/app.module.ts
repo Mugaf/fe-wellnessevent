@@ -13,6 +13,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { ModalAddComponent } from './modal-add/modal-add.component';
 import { ModalApprovalComponent } from './modal-approval/modal-approval.component';
 import { ModalRejectComponent } from './modal-reject/modal-reject.component';
+import { ModalApproveComponent } from './modal-approve/modal-approve.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalRejectComponent } from './modal-reject/modal-reject.component';
     EventDetailsComponent,
     ModalAddComponent,
     ModalApprovalComponent,
-    ModalRejectComponent
+    ModalRejectComponent,
+    ModalApproveComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { ModalRejectComponent } from './modal-reject/modal-reject.component';
     NgbdModalConfirmAutofocus, 
     ModalAddComponent, 
     ModalApprovalComponent,
-    ModalRejectComponent
+    ModalRejectComponent,
+    ModalApproveComponent
   ]
 })
 export class AppModule { }
